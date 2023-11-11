@@ -99,7 +99,6 @@ class LogViewset(viewsets.ViewSet):
         except json.JSONDecodeError:
             return Response({"error": "Bad request body"}, status=status.HTTP_400_BAD_REQUEST)
 
-
         if "user" in body:
             user = body["user"]
             if "date" not in body:
