@@ -6,4 +6,4 @@ class Log(models.Model):
     who = models.CharField(max_length=100)
     action_type = models.CharField(max_length=100)
     object_type = models.CharField(max_length=100)
-    object_id = models.IntegerField()
+    object_id = models.AutoField(primary_key=True)
