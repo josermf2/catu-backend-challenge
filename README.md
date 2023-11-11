@@ -83,3 +83,33 @@ A partir dai é só você fazer sua mágica!
 ## 🖥️ É isso! Happy Coding!
 
 Para sanar qualquer dúvida, entre em contato com o nosso time!
+
+___
+
+## Como usar o backend criado?
+
+Foram desenvolvidos os três endpoints solicitados no desafio, abaixo estão exemplos de usos:
+
+#### Criação de log:
+  - Faça uma requisição `POST` para `http://localhost:8080/log/new-log/` com um payload `JSON` contendo o usuário que executou a ação, o tipo da ação e o tipo do objeto (string). Um exemplo de payload seria: `{ "who" : "rafael2", "action_type" : "edit", "object_type" : "test" }`
+  - Caso não exista payload ou falte algum argumento o server retornará uma mensagem de erro informando o usuário
+
+#### Seleção de logs:
+  - Faça uma requisição `GET` para `http://localhost:8080/log/get-logs/`    
+    - Caso o usuário não envie nenhum payload todos os logs do database serão retornados.
+    - Caso o usuário envie um user no payload todos os logs daquele user serão retornados.
+    - Caso o usuário envie uma data de inicio e data de fim todos os logs daquele período serão retornados.
+    - Caso o usuário envie um user, uma data de inicio e uma data de fim todos os logs daquele user naquele período serão retornados.
+    - Um exemplo de payload seria: `{"user": "rafael2", "date": { "start_date": "2023-11-11", "finish_date": "2023-11-12"}}`
+    - Caso o usuário envie um payload errado ou com argumentos errados o server retornará uma mensagem de erro.
+
+
+#### Contagem de logs
+  - Faça uma requisição `GET` para `http://localhost:8080/log/action-counts/` com um payload `JSON` contendo a data de inicio e de fim do filtro e o server retornará a contagem de tipos de logs criados naquele período.
+      - Um exemplo de payload seria: `{"start_date": "2023-11-11", "finish_date": "2023-11-12"}`
+  - Caso não exista payload ou falte algum argumento o server retornará uma mensagem de erro informando o usuário
+
+
+
+   
+
