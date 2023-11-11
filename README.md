@@ -109,7 +109,11 @@ Foram desenvolvidos os três endpoints solicitados no desafio, abaixo estão exe
       - Um exemplo de payload seria: `{"start_date": "2023-11-11", "finish_date": "2023-11-12"}`
   - Caso não exista payload ou falte algum argumento o server retornará uma mensagem de erro informando o usuário
 
+## Testes
 
+Foram criados testes para os cenários possíveis de uso dos endpoints, para testá-los é necessário utilizar o comando:
 
-   
+```
+python3 manage.py test
+```
 
