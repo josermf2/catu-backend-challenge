@@ -87,7 +87,7 @@ class LogViewset(viewsets.ViewSet):
         retornará os logs daquele usuário no período
         selecionado.
     '''
-    @action(detail=False, methods=["get"], url_path="get-logs")
+    @action(detail=False, methods=["post"], url_path="get-logs")
     def get_logs(self, request):
         all_logs = Log.objects.all().values()
 
@@ -127,7 +127,7 @@ class LogViewset(viewsets.ViewSet):
         Caso o período não seja enviado, a requisição
         retorna um erro.
     '''
-    @action(detail=False, methods=["get"], url_path="action-counts")
+    @action(detail=False, methods=["post"], url_path="action-counts")
     def action_counts(self, request):
         if not request.body:
             return Response({"error": "Body not found in request"}, status=status.HTTP_400_BAD_REQUEST)

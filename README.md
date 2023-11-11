@@ -95,7 +95,7 @@ Foram desenvolvidos os três endpoints solicitados no desafio, abaixo estão exe
   - Caso não exista payload ou falte algum argumento o server retornará uma mensagem de erro informando o usuário
 
 #### Seleção de logs:
-  - Faça uma requisição `GET` para `http://localhost:8080/log/get-logs/`    
+  - Faça uma requisição `POST` para `http://localhost:8080/log/get-logs/`    
     - Caso o usuário não envie nenhum payload todos os logs do database serão retornados.
     - Caso o usuário envie um user no payload todos os logs daquele user serão retornados.
     - Caso o usuário envie uma data de inicio e data de fim todos os logs daquele período serão retornados.
@@ -105,7 +105,7 @@ Foram desenvolvidos os três endpoints solicitados no desafio, abaixo estão exe
 
 
 #### Contagem de logs
-  - Faça uma requisição `GET` para `http://localhost:8080/log/action-counts/` com um payload `JSON` contendo a data de inicio e de fim do filtro e o server retornará a contagem de tipos de logs criados naquele período.
+  - Faça uma requisição `POST` para `http://localhost:8080/log/action-counts/` com um payload `JSON` contendo a data de inicio e de fim do filtro e o server retornará a contagem de tipos de logs criados naquele período.
       - Um exemplo de payload seria: `{"start_date": "2023-11-11", "finish_date": "2023-11-12"}`
   - Caso não exista payload ou falte algum argumento o server retornará uma mensagem de erro informando o usuário
 
